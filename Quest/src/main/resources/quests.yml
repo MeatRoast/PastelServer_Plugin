@@ -1,0 +1,50 @@
+quests:
+  daily_mine_diamond:
+    title: "일일: 다이아 광석 채굴 20회"
+    type: DAILY
+    randomDailyPool: true
+    rewardCoin: 300
+    objectives:
+      - type: MINE_BLOCK
+        target: DIAMOND_ORE
+        amount: 20
+
+  daily_kill_zombie:
+    title: "일일: 좀비 50마리 처치"
+    type: DAILY
+    randomDailyPool: true
+    rewardCoin: 250
+    objectives:
+      - type: KILL_MOB
+        target: ZOMBIE
+        amount: 50
+
+  normal_collect_diamond:
+    title: "일반: 다이아 100개 수집"
+    type: NORMAL
+    randomDailyPool: false
+    rewardCoin: 1000
+    objectives:
+      - type: COLLECT_ITEM
+        target: DIAMOND
+        amount: 100
+
+  normal_clear_daily_5:
+    title: "일반: 일일퀘스트 5회 클리어"
+    type: NORMAL
+    randomDailyPool: false
+    rewardCoin: 1000
+    objectives:
+      - type: COMPLETE_QUEST
+        target: "daily:*"
+        amount: 5
+
+  guild_collect_diamond:
+    title: "길드: 다이아 2000개 수집"
+    type: GUILD
+    randomDailyPool: false
+    rewardCoin: 2000
+    objectives:
+      - type: COLLECT_ITEM
+        target: DIAMOND
+        amount: 2000

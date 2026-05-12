@@ -1,0 +1,18 @@
+name: QuestPlugin
+version: 1.0.0
+main: quest.plugin.QuestPlugin
+api-version: "1.21"
+authors: [MeatRoast]
+
+commands:
+  quest:
+    description: Quest command
+    usage: /quest list
+  questadmin:
+    description: Quest admin command
+    usage: /questadmin <reload|dailyreset|guildset>
+    permission: quest.admin
+
+permissions:
+  quest.admin:
+    default: op

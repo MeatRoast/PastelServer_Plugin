@@ -1,0 +1,10 @@
+name: Money
+version: 1.1.0
+main: com.money.plugin.MoneyPlugin
+api-version: "1.20"
+author: MeatRoast
+depend: [SQLDB]
+permissions:
+  money.admin:
+    description: Admin permission for money command
+    default: op

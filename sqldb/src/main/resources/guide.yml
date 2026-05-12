@@ -1,0 +1,19 @@
+plugin:
+  name: "SQLDB"
+  version: "${version}"
+  paper: "1.21.1"
+  java: "26"
+  description: "MySQL 공용 연결 서비스를 제공하는 플러그인"
+
+setup:
+  - "plugins/SQLDB/config.yml에서 mysql 접속정보를 설정하세요."
+  - "설정 후 서버를 재시작하세요."
+  - "/dbping 명령어로 연결 상태를 점검하세요."
+
+integration:
+  plugin_yml:
+    depend: "[SQLDB]"
+  java:
+    service_class: "io.github.dohwan.sqldb.api.SqlDbService"
+    api_class: "io.github.dohwan.sqldb.api.SqlDbApi"
+    call_example: "SqlDbApi db = SqlDbService.get(this);"

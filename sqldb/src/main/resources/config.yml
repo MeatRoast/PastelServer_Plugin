@@ -1,0 +1,31 @@
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  database: "minecraft"
+  username: "root"
+  password: "change-me"
+  useSsl: false
+  maximumPoolSize: 10
+  connectionTimeoutMs: 10000
+
+messages:
+  log:
+    enabled: "SQLDB enabled."
+    disabled: "SQLDB disabled."
+    dbConnectFailed: "디비연결이 실패했습니다 확인해주세요 !"
+    dbErrorPrefix: "DB error: "
+  command:
+    usageDbsql: "&8[&bSQLDB&8] &eUsage: &f/dbsql <reload|start|stop|tables|table <name>>"
+    usageTable: "&8[&bSQLDB&8] &eUsage: &f/dbsql table <name>"
+    dbReloaded: "&8[&bSQLDB&8] &aDB reloaded."
+    dbReloadFailed: "&8[&bSQLDB&8] &cDB reload failed."
+    dbStarted: "&8[&bSQLDB&8] &aDB started."
+    dbStartFailed: "&8[&bSQLDB&8] &cDB start failed."
+    dbStopped: "&8[&bSQLDB&8] &eDB stopped."
+    dbConnected: "&8[&bSQLDB&8] &aMySQL connected."
+    dbNotConnected: "&8[&bSQLDB&8] &cMySQL not connected."
+    tablesHeader: "&8[&bSQLDB&8] &bTables:"
+    tablesEmpty: "&8[&bSQLDB&8] &eNo tables found."
+    tableHeader: "&8[&bSQLDB&8] &bColumns of"
+    tableNotFound: "&8[&bSQLDB&8] &cTable not found or no columns:"
+    tableQueryFailed: "&8[&bSQLDB&8] &cFailed to query table info."

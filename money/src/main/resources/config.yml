@@ -1,0 +1,16 @@
+economy:
+  currencySymbol: "원"
+
+rankings:
+  topLimit: 10
+
+command:
+  name: "money"
+  aliases:
+    - "돈"
+
+cheque:
+  minAmount: 10000
+  command:
+    name: "수표"
+    aliases: []

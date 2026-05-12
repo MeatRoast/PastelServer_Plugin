@@ -1,0 +1,12 @@
+daily:
+  random-count: 3
+
+bot:
+  # Python 디스코드봇 서버 API 엔드포인트 예: http://127.0.0.1:8000/quest/event
+  endpoint: ""
+  token: ""
+
+# 이전 키와 호환 (있어도 되고 없어도 됨)
+discord:
+  endpoint: ""
+  token: ""

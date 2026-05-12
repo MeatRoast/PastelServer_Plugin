@@ -1,0 +1,20 @@
+name: SQLDB
+version: ${version}
+main: io.github.dohwan.sqldb.SqldbPlugin
+api-version: "1.21"
+authors: [MeatRoast]
+description: Shared MySQL connection service for Paper plugins.
+commands:
+  dbping:
+    description: Check current MySQL connection state.
+    usage: /dbping
+    permission: sqldb.dbping
+  dbsql:
+    description: Control SQLDB connection.
+    usage: /dbsql <reload|start|stop|tables|table <name>>
+    permission: sqldb.admin
+permissions:
+  sqldb.dbping:
+    default: op
+  sqldb.admin:
+    default: op

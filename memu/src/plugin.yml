@@ -1,0 +1,15 @@
+name: MemuServerMenu
+main: com.memu.servermenu.Main
+version: 1.0.0
+api-version: 1.13
+author: MeatRoast
+depend: [SQLDB]
+softdepend: [PlaceholderAPI]
+commands:
+  servermenu:
+    description: Open server selector GUI
+    usage: /servermenu [reload]
+    aliases: [serverselect, 서버선택]
+permissions:
+  servermenu.reload:
+    default: op

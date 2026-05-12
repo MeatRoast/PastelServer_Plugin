@@ -1,0 +1,12 @@
+name: Guild
+version: ${version}
+main: com.guild.plugin.GuildPlugin
+api-version: "1.21"
+author: MeatRoast
+description: Guild plugin for Paper
+depend: [SQLDB]
+commands:
+  guild:
+    description: Guild command
+    usage: "/guild | /\uAE38\uB4DC"
+    aliases: [g, "\uAE38\uB4DC"]

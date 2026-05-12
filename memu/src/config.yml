@@ -1,0 +1,107 @@
+sqldb:
+  enabled: true
+  refresh_ticks: 100
+  heartbeat_timeout_seconds: 20
+  init_table_sql: "CREATE TABLE IF NOT EXISTS server_status (server_id VARCHAR(64) PRIMARY KEY, status VARCHAR(32) NOT NULL DEFAULT '오프라인', online_players INT NOT NULL DEFAULT 0, last_seen BIGINT NOT NULL DEFAULT 0)"
+  query: "SELECT status, online_players, last_seen FROM server_status WHERE server_id = ? LIMIT 1"
+
+proxy:
+  refresh_ticks: 40
+  online_timeout_ms: 12000
+  tcp_check:
+    enabled: true
+    timeout_ms: 1200
+
+status_targets:
+  lobby:
+    host: "127.0.0.1"
+    port: 25565
+  wild1:
+    host: "127.0.0.1"
+    port: 25566
+  wild2:
+    host: "127.0.0.1"
+    port: 25567
+  wild3:
+    host: "127.0.0.1"
+    port: 25568
+
+menu_title: '&8서버 선택'
+open_command:
+  - serverselect
+  - 서버선택
+
+size: 27
+
+items:
+  filler:
+    material: BLACK_STAINED_GLASS_PANE
+    slots:
+      - 0-26
+    display_name: ' '
+
+  lobby:
+    material: NETHER_STAR
+    slot: 4
+    display_name: '&6&l로비 서버'
+    lore:
+      - ''
+      - '&7서버 이동'
+      - '&f대상 &8: &e로비'
+      - ''
+      - '&7접속자 정보'
+      - '&f로비 &8: &e%bungee_lobby%명'
+      - ''
+      - '&e클릭하면 로비 서버로 이동합니다.'
+    left_click_commands:
+      - '[message] &6로비 서버로 이동합니다.'
+      - '[connect] lobby'
+
+  wild1:
+    material: GRASS_BLOCK
+    slot: 11
+    display_name: '&a&l야생서버 1번'
+    lore:
+      - ''
+      - '&7서버 정보'
+      - '&f상태 &8: &f%server_status_wild1%'
+      - '&f접속자 &8: &e%bungee_wild1%명'
+      - '&f난이도 &8: &a쉬움'
+      - '&f인벤세이브 &8: &aO'
+      - ''
+      - '&e클릭하면 야생서버 1번으로 이동합니다.'
+    left_click_commands:
+      - '[message] &a야생서버 1번으로 이동합니다.'
+      - '[connect] wild1'
+
+  wild2:
+    material: OAK_SAPLING
+    slot: 13
+    display_name: '&b&l야생서버 2번'
+    lore:
+      - ''
+      - '&7서버 정보'
+      - '&f상태 &8: &f%server_status_wild2%'
+      - '&f접속자 &8: &e%bungee_wild2%명'
+      - '&f난이도 &8: &e보통'
+      - '&f인벤세이브 &8: &aO'
+      - ''
+      - '&e클릭하면 야생서버 2번으로 이동합니다.'
+    left_click_commands:
+      - '[connect] wild2'
+
+  wild3:
+    material: NETHERRACK
+    slot: 15
+    display_name: '&c&l야생서버 3번'
+    lore:
+      - ''
+      - '&7서버 정보'
+      - '&f상태 &8: &f%server_status_wild3%'
+      - '&f접속자 &8: &e%bungee_wild3%명'
+      - '&f난이도 &8: &c어려움'
+      - '&f인벤세이브 &8: &cX'
+      - ''
+      - '&e클릭하면 야생서버 3번으로 이동합니다.'
+    left_click_commands:
+      - '[connect] wild3'
