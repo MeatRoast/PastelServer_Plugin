@@ -110,9 +110,15 @@ public class GuildService {
 
     public String createGuild(String guildName, Player leader, boolean consumeTicket) {
         String key = guildName.toLowerCase();
-        if (guilds.containsKey(key)) return messages.get("guild.already_exists");
-        if (hasGuild(leader.getUniqueId())) return messages.get("guild.already_in_guild");
-        if (consumeTicket && !removeCreateTicketItem(leader, 1)) return messages.get("ticket.required");
+        if (guilds.containsKey(key)) {
+            return messages.get("guild.already_exists");
+        }
+        if (hasGuild(leader.getUniqueId())) {
+            return messages.get("guild.already_in_guild");
+        }
+        if (consumeTicket && !removeCreateTicketItem(leader, 1)) {
+            return messages.get("ticket.required");
+        }
         Map<UUID, Long> members = new LinkedHashMap<>();
         members.put(leader.getUniqueId(), Instant.now().toEpochMilli());
         guilds.put(key, new Guild(guildName, leader.getUniqueId(), false, BASE_MAX_MEMBERS, members, new HashSet<>()));
