@@ -90,7 +90,9 @@ public class GuildService {
             sec.set("autoJoin", guild.autoJoin());
             sec.set("maxMembers", guild.maxMembers());
             ConfigurationSection membersSec = sec.createSection("members");
-            for (Map.Entry<UUID, Long> e : guild.members().entrySet()) membersSec.set(e.getKey().toString(), e.getValue());
+            for (Map.Entry<UUID, Long> e : guild.members().entrySet()) {
+                membersSec.set(e.getKey().toString(), e.getValue());
+            }
             List<String> blocked = new ArrayList<>();
             for (UUID id : guild.blocked()) blocked.add(id.toString());
             sec.set("blocked", blocked);
